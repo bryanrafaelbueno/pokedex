@@ -1,5 +1,3 @@
-const socket = io();
-
 document.addEventListener("DOMContentLoaded", () => {
     const container = document.querySelector('.pokemonsContainer');
 
@@ -79,8 +77,5 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    socket.on("connect", () => {
-        console.log("Conectado ao servidor");
-        loadPokemons();
-    });
+    loadPokemons();
 });

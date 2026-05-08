@@ -8,6 +8,80 @@
     <link rel="stylesheet" href="404.css">
 </head>
 <body>
-    404 - Página não encontrada
+    <div class="container">
+        <div class="content">
+            <div class="error-section">
+                <img id="bulbasaur-left" src="https://i.imgur.com/6FO8mqT.png" alt="Pokemon" class="bulbasaur bulbasaur-left">
+                <div class="error-code">404</div>
+                <img id="bulbasaur-right" src="https://i.imgur.com/6FO8mqT.png" alt="Pokemon" class="bulbasaur bulbasaur-right">
+            </div>
+            <h1>Página não encontrada</h1>
+            <p id="random-phrase">Desculpa, a página que você procura não existe ou foi movida.</p>
+            <a href="/" class="btn">Voltar para Home</a>
+        </div>
+    </div>
+    <audio id="bg-music" loop muted style="display: none;">
+        <source src="404.mp3" type="audio/mpeg">
+    </audio>
+    <script>
+        const phrases = [
+            "A página que você procura fugiu mais rápido que um Pidgey selvagem na primeira batalha!",
+            "A página que você procura se escondeu melhor que um Ditto em batalha!",
+            "Parece que a página fugiu como um Abra usando Teletransporte!",
+            "Ela se perdeu na rota 404 e só um Snorlax poderia bloquear o caminho!",
+            "A página que você procura escapou mais rápido que um Quick Attack de Jolteon!",
+            "A página que você procura não aparece. Talvez um Diglett esteja cavando debaixo dela!"
+        ];
+
+        const pokemonImages = [
+            "https://i.imgur.com/6FO8mqT.png", // Sad Bulbasaur
+            "https://i.imgur.com/1uZe8NY.png"  // New Pokemon image
+        ];
+
+        const randomPhrase = phrases[Math.floor(Math.random() * phrases.length)];
+        document.getElementById('random-phrase').textContent = randomPhrase;
+
+        // Randomly choose between all Bulbasaurs or all Pikachus
+        const leftBulbasaur = document.getElementById('bulbasaur-left');
+        const rightBulbasaur = document.getElementById('bulbasaur-right');
+
+        // Randomly choose: 0 = Bulbasaurs, 1 = Pikachus
+        const pokemonChoice = Math.floor(Math.random() * 2);
+        const chosenImage = pokemonImages[pokemonChoice];
+
+        // Set both images to the chosen type
+        leftBulbasaur.src = chosenImage;
+        rightBulbasaur.src = chosenImage;
+
+        // Apply transforms based on chosen Pokemon type
+        if (chosenImage.includes('6FO8mqT')) {
+            // Bulbasaurs: left flipped, right normal
+            leftBulbasaur.style.transform = 'scaleX(-1)';
+            rightBulbasaur.style.transform = 'scaleX(1)';
+            leftBulbasaur.alt = 'Sad Bulbasaur';
+            rightBulbasaur.alt = 'Sad Bulbasaur';
+        } else {
+            // Pikachus: left normal, right flipped
+            leftBulbasaur.style.transform = 'scaleX(1)';
+            rightBulbasaur.style.transform = 'scaleX(-1)';
+            leftBulbasaur.alt = 'Pikachu';
+            rightBulbasaur.alt = 'Pikachu';
+        }
+
+        // Play background music on first click
+        const audio = document.getElementById('bg-music');
+        let musicStarted = false;
+
+        document.addEventListener('click', function() {
+            if (!musicStarted && audio) {
+                audio.volume = 0.2;
+                audio.muted = false;
+                audio.play().catch(function(error) {
+                    console.log('Audio play failed:', error);
+                });
+                musicStarted = true;
+            }
+        });
+    </script>
 </body>
 </html>
