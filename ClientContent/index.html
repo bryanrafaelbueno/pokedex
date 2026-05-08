@@ -2,20 +2,24 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pokemons</title>
+    <title>Pokédex</title>
+
     <link rel="stylesheet" href="index.css">
-    <script src="https://cdn.socket.io/4.5.3/socket.io.min.js" integrity="sha384-WPFUvHkB1aHA5TDSZi6xtDgkF0wXJcIIxXhC6h8OT8EH3fC5PWro5pWJ1THjcfEi" crossorigin="anonymous"></script>
-    <script src="index.js"></script>
+
+    <script src="https://cdn.socket.io/4.5.3/socket.io.min.js"></script>
+    <script src="index.js" defer></script>
 </head>
+
 <body>
-    <header>
-        <img class="pokedexLogo" src="https://i.imgur.com/8GghEXD.png" alt="Pokedex Logo">
-    </header>
-    <div class="ContainerOfContainer">
-        <div class="pokemonsContainer">
-        </div>
-    </div>
+
+<header class="header">
+    <img class="pokedexLogo" src="https://i.imgur.com/8GghEXD.png" alt="Pokedex Logo">
+</header>
+
+<main class="wrapper">
+    <div class="pokemonsContainer"></div>
+</main>
+
 </body>
 </html>
