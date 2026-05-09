@@ -12,22 +12,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // ─── Type color map ───
     const TYPE_COLORS = {
-        normal:   '#A8A878', fire:     '#F08030', water:    '#6890F0',
-        electric: '#F8D030', grass:    '#78C850', ice:      '#98D8D8',
-        fighting: '#C03028', poison:   '#A040A0', ground:   '#E0C068',
-        flying:   '#A890F0', psychic:  '#F85888', bug:      '#A8B820',
-        rock:     '#B8A038', ghost:    '#705898', dragon:   '#7038F8',
-        dark:     '#705848', steel:    '#B8B8D0', fairy:    '#EE99AC',
+        normal: '#A8A878', fire: '#F08030', water: '#6890F0',
+        electric: '#F8D030', grass: '#78C850', ice: '#98D8D8',
+        fighting: '#C03028', poison: '#A040A0', ground: '#E0C068',
+        flying: '#A890F0', psychic: '#F85888', bug: '#A8B820',
+        rock: '#B8A038', ghost: '#705898', dragon: '#7038F8',
+        dark: '#705848', steel: '#B8B8D0', fairy: '#EE99AC',
     };
 
     // ─── Stat color map ───
     const STAT_COLORS = {
-        hp:                '#ff5555',
-        attack:            '#f0a030',
-        defense:           '#68b8f0',
-        'special-attack':  '#f85888',
+        hp: '#ff5555',
+        attack: '#f0a030',
+        defense: '#68b8f0',
+        'special-attack': '#f85888',
         'special-defense': '#78c850',
-        speed:             '#f8d030',
+        speed: '#f8d030',
     };
 
     // Capitalize type names
@@ -193,16 +193,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (count > 0) {
             container.appendChild(fragment);
-            totalLoaded += count;
-            updateCounter();
         }
         return count;
     }
 
-    // Update the counter badge
-    function updateCounter() {
+    // Update the counter badge with total from API
+    function updateCounter(total) {
         if (counterElement) {
-            counterElement.textContent = `${totalLoaded} Pokémons carregados`;
+            counterElement.textContent = `${total} Pokémons na Database`;
         }
     }
 
@@ -212,6 +210,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const response = await fetch('https://pokeapi.co/api/v2/pokemon?limit=1025&offset=0');
             const data = await response.json();
             allPokemonList = data.results;
+            updateCounter(data.count);
             loadMorePokemons();
         } catch (err) {
             console.error("Erro ao carregar lista de Pokémons:", err);
