@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://i.imgur.com/8GghEXD.png" alt="Pokédex Logo" width="300">
+  <img src="https://i.imgur.com/8GghEXD.png" alt="Pokédex Logo" width="600">
 </div>
 
 # Pokédex
