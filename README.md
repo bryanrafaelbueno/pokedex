@@ -21,7 +21,6 @@ An interactive web application that displays Pokémon cards with detailed inform
 
 - **Frontend**: HTML, CSS, JavaScript
 - **Backend**: Node.js with Express
-- **Real-time Communication**: Socket.IO
 - **API**: [PokeAPI v2](https://pokeapi.co/api/v2/)
 
 ## Project Structure
@@ -118,7 +117,6 @@ This project uses the **[PokeAPI v2](https://pokeapi.co/api/v2/)**
   - CSS 3D Transforms
   - ES6 JavaScript
   - Fetch API
-  - Socket.IO
 
 ## Known Issues
 
