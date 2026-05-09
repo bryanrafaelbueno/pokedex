@@ -154,7 +154,6 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(165px, 1fr));
     gap: 16px;
-    perspective: 1400px;
 }
 
 /* ─── CARD ─── */
@@ -220,7 +219,7 @@ body {
 /* ─── FRONT ─── */
 .pokemonFront {
     z-index: 2;
-    transform: rotateY(0deg);
+    transform: rotateY(0deg) translateZ(0);
     padding: 15px 10px;
     gap: 6px;
 }
@@ -300,7 +299,7 @@ body {
 
 /* ─── BACK ─── */
 .pokemonBack {
-    transform: rotateY(180deg);
+    transform: rotateY(180deg) translateZ(0);
     z-index: 1;
     padding: 16px 14px;
     text-align: center;
