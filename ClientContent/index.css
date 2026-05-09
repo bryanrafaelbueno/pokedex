@@ -170,8 +170,7 @@ body {
 .pokemonCard {
     height: 220px;
     perspective: 1400px;
-    isolation: isolate;
-    contain: layout style paint;
+    padding: 4px;
     animation: cardAppear 0.5s ease-out both;
 }
 
