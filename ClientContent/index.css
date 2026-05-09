@@ -13,7 +13,7 @@ body {
     background-image: url('https://lh3.googleusercontent.com/05JfZ1ZdyzrRNvhJosUFdcjjJRFE7k2KhmeM2ujqeCbrcrCb1hkq7O_JdUBpQ3r9hi0YeSn4WgmKx3Ai8LHdM2SucxSzl9TRZ4fCAqETJ6WtHgE=s0');
     background-size: cover;
     background-position: center;
-    background-attachment: scroll;
+    background-attachment: fixed;
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -183,7 +183,7 @@ p {
     transform: rotateY(180deg);
     z-index: 1;
     padding: 12px;
-    text-align: left;
+    text-align: center;
     font-size: 10px;
 }
 
