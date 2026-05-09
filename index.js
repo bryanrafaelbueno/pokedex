@@ -34,6 +34,11 @@ app.get('/assets/pokedex.webp', (req, res) => {
     res.sendFile(path.join(__dirname, 'ClientContent/assets/pokedex.webp'));
 });
 
+app.get('/favicon.svg', (req, res) => {
+    res.set('Cache-Control', CACHE_LONG);
+    res.sendFile(path.join(__dirname, 'ClientContent/assets/favicon.svg'));
+});
+
 app.get('/404.css', (req, res) => {
     res.set('Cache-Control', CACHE_SHORT);
     res.sendFile(path.join(__dirname, 'ClientContent/404/404.css'));
