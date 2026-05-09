@@ -18,6 +18,9 @@ app.get('/index.css', (req, res) => {
 app.get('/fonts/8-BIT%20WONDER.ttf', (req, res) => {
     res.sendFile(`${__dirname}/ClientContent/fonts/8-BIT WONDER.ttf`);
 });
+app.get('/assets/pokedex.webp', (req, res) => {
+    res.sendFile(`${__dirname}/ClientContent/assets/pokedex.webp`);
+});
 
 app.get('/404.css', (req, res) => {
     res.sendFile(`${__dirname}/ClientContent/404/404.css`);
