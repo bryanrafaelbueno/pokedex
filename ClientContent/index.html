@@ -1,9 +1,15 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Pokédex interativa com todos os Pokémons. Descubra tipos, stats e muito mais!">
     <title>Pokédex</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="404/404.css">
@@ -13,18 +19,38 @@
 
 <body>
 
-<div class="container">
-    <div class="content">
-        <header class="header">
-            <img class="pokedexLogo" src="https://i.imgur.com/8GghEXD.png" alt="Pokedex Logo">
-        </header>
-        <p>Descubra todos os Pokémons incríveis!</p>
-        <main class="wrapper">
-            <div class="pokemonsContainer"></div>
-        </main>
-        <div id="loading" class="loading-indicator" style="display:none;"></div>
+    <div class="container">
+        <div class="content">
+            <header class="header">
+                <img class="pokedexLogo" src="https://i.imgur.com/8GghEXD.png" alt="Pokedex Logo">
+                <div class="header-info">
+                    <p class="subtitle">Descubra todos os Pokémons incríveis!</p>
+                    <span id="pokemonCounter" class="pokemon-counter">0 Pokémons carregados</span>
+                </div>
+            </header>
+            <main class="wrapper">
+                <div class="pokemonsContainer"></div>
+            </main>
+            <div id="loading" class="loading-indicator" style="display:none;">
+                <div class="pokeball-spinner">
+                    <div class="pokeball-top"></div>
+                    <div class="pokeball-center">
+                        <div class="pokeball-button"></div>
+                    </div>
+                    <div class="pokeball-bottom"></div>
+                </div>
+                <p class="loading-text">Carregando Pokémons...</p>
+            </div>
+        </div>
     </div>
-</div>
+
+    <button id="scrollTopBtn" class="scroll-top-btn" title="Voltar ao topo">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+    </button>
 
 </body>
+
 </html>
